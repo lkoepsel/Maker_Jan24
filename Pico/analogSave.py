@@ -1,6 +1,7 @@
 # analogSave.py - read an analog to digital pin and save to a file
 
 import machine
+import sys
 import time
 
 samples = 5
@@ -33,7 +34,7 @@ def print_data():
 
     for i in range(samples):
         data = file.read()
-        print(data)
+        print(data, end='')
     print("End of data")
     file.close
 
@@ -43,3 +44,4 @@ if __name__ == '__main__':
     read()
     print_data()
     print("Logging Complete")
+    sys.exit(0)
