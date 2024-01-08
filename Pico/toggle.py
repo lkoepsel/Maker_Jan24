@@ -1,14 +1,13 @@
 # toggle.py - a more simple blink
-# identify the pin to blink on line 6
+# Builtin LED on Pico W is referenced using "LED"
 from machine import Pin
 from time import sleep_ms
 
-pin = 14
-delay = 25
+delay = 250
 freq = (1 / (delay * 2)) * 1000
-led = Pin(pin, Pin.OUT)
+led = Pin("LED", Pin.OUT)
 
-print("toggle: pin", pin, "will blink with a delay of",
+print("toggle: ", "LED", "will blink with a delay of",
       delay, "ms at a frequency of", freq, "kHz.")
 
 # with a delay of 100, the pin will have a 5Hz frequency

@@ -1,15 +1,14 @@
 # blink.py - blink a pin and print the frequency
-# identify the pin to blink on line 7
+# Builtin LED on Pico W is referenced using "LED"
 # delay time will determine frequency
 from machine import Pin
 from time import sleep_ms
 
-pin = 20
 delay = 25
 freq = (1 / (delay * 2)) * 1000
-led = Pin(pin, Pin.OUT)
+led = Pin("LED", Pin.OUT)
 
-print("blink: pin", pin, "will blink with a delay of",
+print("blink: ", "LED", "will blink with a delay of",
       delay, "ms at a frequency of", freq, "kHz.")
 
 # with a delay of 100, the pin will have a 5Hz frequency

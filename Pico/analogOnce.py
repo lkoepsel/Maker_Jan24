@@ -1,4 +1,4 @@
-# analogRead.py - read an analog to digital pin
+# analogOnce.py - read an analog to digital pin
 
 import machine
 
