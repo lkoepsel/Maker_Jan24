@@ -9,3 +9,5 @@ The latter board (*Uno R3*) with its much more simple microcontroller (*ATmega32
 ## Programs
 * **blink** - standard "*Hello World*" program for microcontrollers, run this first to understand the programming process
 * **toggle** - an enhanced version which assumes a symmetrical *on/off* cycle. The *Uno* version adds an considerable speed enhancement. This program is designed to help you understand how to make changes to enhance performance.
+* **analogOnce** - reads an analog to digital pin and report the value. On the Pico, it reads the temp of the pin in Celsius.
+* **analogSave** - reads an analog to digital pin for N samples. Once it has read all fo the values, it will print them on the serial port

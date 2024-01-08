@@ -1,11 +1,13 @@
 # analogSave.py - read an analog to digital pin and save to a file
 
 import machine
+from machine import Pin
 import sys
 import time
 
 samples = 5
 sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
+led = Pin("LED", Pin.OUT)
 
 
 def temp_convert(t):
@@ -19,11 +21,14 @@ def temp_convert(t):
 def read():
     file = open("temps.txt", "w")
     for i in range(samples):
+        led.on()
         temp = temp_convert(sensor_temp.read_u16())
         data = str(i) + "\t" + str(time.localtime()) + "\t" + str(temp) + "\n"
         file.write(str(data))
         file.flush()
-        time.sleep_ms(10)
+        time.sleep_ms(1000)
+        led.off()
+        time.sleep_ms(1000)
 
     file.close
 
