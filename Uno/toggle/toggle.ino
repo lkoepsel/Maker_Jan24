@@ -10,9 +10,6 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-  PINB |= (_BV(PORTB0));             // toggle the bit using C bit set code
-//  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-//  delay(1000);                       // wait for a second
-//  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-//  delay(1000);                       // wait for a second
+  PINB |= (_BV(PORTB0)); // toggle the bit using C bit set code
+  delay(10); // wait for a 10 milliseconds
 }

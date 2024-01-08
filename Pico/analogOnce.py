@@ -1,7 +1,6 @@
 # analogRead.py - read an analog to digital pin
 
 import machine
-import time
 
 
 def volt_convert(p):

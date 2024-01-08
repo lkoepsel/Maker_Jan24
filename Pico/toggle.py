@@ -1,4 +1,4 @@
-# blink.py - blink a pin
+# toggle.py - a more simple blink
 # identify the pin to blink on line 6
 from machine import Pin
 from time import sleep_ms
