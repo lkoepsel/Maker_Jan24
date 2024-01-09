@@ -6,7 +6,7 @@ import sys
 import time
 
 samples = 5
-sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
+sensor_temp = machine.ADC(0)
 led = Pin("LED", Pin.OUT)
 read_time = 500
 print_time = 100
@@ -24,7 +24,7 @@ def read():
     file = open("temps.txt", "w")
     for i in range(samples):
         led.on()
-        temp = temp_convert(sensor_temp.read_u16())
+        temp = sensor_temp.read_u16()
         data = str(i) + "\t" + str(time.localtime()) + "\t" + str(temp) + "\n"
         file.write(str(data))
         file.flush()
