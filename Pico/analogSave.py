@@ -8,6 +8,8 @@ import time
 samples = 5
 sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
 led = Pin("LED", Pin.OUT)
+read_time = 500
+print_time = 100
 
 
 def temp_convert(t):
@@ -26,9 +28,9 @@ def read():
         data = str(i) + "\t" + str(time.localtime()) + "\t" + str(temp) + "\n"
         file.write(str(data))
         file.flush()
-        time.sleep_ms(1000)
+        time.sleep_ms(read_time)
         led.off()
-        time.sleep_ms(1000)
+        time.sleep_ms(read_time)
 
     file.close
 
@@ -38,13 +40,18 @@ def print_data():
     print("Sample No \t Local Date/Time \t Temperature")
 
     for i in range(samples):
+        led.on()
         data = file.read()
         print(data, end='')
+        time.sleep_ms(print_time)
+        led.off()
+        time.sleep_ms(print_time)
     print("End of data")
     file.close
 
 
 if __name__ == '__main__':
+    time.sleep(1)
     print("Start Logging")
     read()
     print_data()
