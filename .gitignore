@@ -21,3 +21,4 @@ build
 ~*
 bloom.yaml
 .gdbinit
+*.uf2
