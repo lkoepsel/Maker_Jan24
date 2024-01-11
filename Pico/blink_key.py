@@ -26,5 +26,7 @@ def Blink():
 
 
 if __name__ == '__main__':
+    time.sleep(1)
+    print(f"Press any key to quit blinking")
     Blink()
     sys.exit()
